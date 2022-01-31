@@ -149,43 +149,6 @@
 
 };
 
-function HappyNewYear(){
-    console.log('ok')
-	document.querySelector('title').innerText = 'Happy New Year'
-    $('#countdown').remove()
-    $('h2').text('HAPPY NEW YEAR')
-    $('h2').css('top', '20%')
-    $('.wrap').append(`
-    <video class="video" id ="video" id="jscii-element-video" loop autoplay>
-        <source src="./static/video/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-        Your browser does not support video
-	</video>
-    <pre hidden class="video" id="ascii-video"></pre>
-    <div id="play" onclick="playVideo()"></div>
-    <div id="change" onclick="changeVideo()"></div>
-    `)
-    Ascii()
-    var videoJscii = new Jscii({
-        container: document.getElementById('ascii-video'),
-        el: document.getElementById('video')
-    });
-    videoJscii.play()
-}
-
-let lunarNewYear = new Date('Jan 31 2022 15:29:00:00 GMT+0700 (Indochina Time)')
-let afterLunarNewYear = new Date('Jan 31 2022 15:29:00:10 GMT+0700 (Indochina Time)')
-if (new Date() >= lunarNewYear) {
-    HappyNewYear()
-} else {
-	$('h2').text('COUNTDOWN')
-}
-setInterval(() => {
-    let date = new Date()
-    if(date >= lunarNewYear && date < afterLunarNewYear) {
-        HappyNewYear()
-    }
-}, 0)
-
 function checkVideo() {
 	let media = document.querySelector('#video')
 
@@ -227,6 +190,45 @@ function changeVideo() {
 		checkTypeVideo()
 	}
 }
+
+function HappyNewYear(){
+    console.log('ok')
+	document.querySelector('title').innerText = 'Happy New Year'
+    $('#countdown').remove()
+    $('h2').text('HAPPY NEW YEAR')
+    $('h2').css('top', '20%')
+    $('.wrap').append(`
+    <video class="video" id ="video" id="jscii-element-video" loop autoplay>
+        <source src="./static/video/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        Your browser does not support video
+	</video>
+    <pre hidden class="video" id="ascii-video"></pre>
+    <div id="play" onclick="playVideo()"></div>
+    <div id="change" onclick="changeVideo()"></div>
+    `)
+     checkVideo()
+     checkTypeVideo()
+    Ascii()
+    var videoJscii = new Jscii({
+        container: document.getElementById('ascii-video'),
+        el: document.getElementById('video')
+    });
+    videoJscii.play()
+}
+
+let lunarNewYear = new Date('Jan 31 2022 15:29:00:00 GMT+0700 (Indochina Time)')
+let afterLunarNewYear = new Date('Jan 31 2022 15:29:00:10 GMT+0700 (Indochina Time)')
+if (new Date() >= lunarNewYear) {
+    HappyNewYear()
+} else {
+	$('h2').text('COUNTDOWN')
+}
+setInterval(() => {
+    let date = new Date()
+    if(date >= lunarNewYear && date < afterLunarNewYear) {
+        HappyNewYear()
+    }
+}, 0)
 
 checkVideo()
 checkTypeVideo()
