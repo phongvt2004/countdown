@@ -172,7 +172,7 @@ function playVideo() {
 }
 
 function checkTypeVideo() {
-	if(document.querySelector('#ascii-video').hasAttribute('hidden')) {
+	if(!document.querySelector('#ascii-video').hasAttribute('hidden')) {
 		$('#change').text('Normal Video')
 	} else {
 		$('#change').text('Ascii Video')
