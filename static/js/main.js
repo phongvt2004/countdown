@@ -156,7 +156,7 @@ function HappyNewYear(){
     $('h2').css('top', '20%')
     $('.wrap').append(`
     <video class="video" hidden id ="video" id="jscii-element-video" loop autoplay>
-        <source src="/static/video/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="./static/video/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
         Your browser does not support video
 	</video>
     <pre hidden class="video" id="ascii-video"></pre>
