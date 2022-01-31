@@ -216,8 +216,8 @@ function HappyNewYear(){
     videoJscii.play()
 }
 
-let lunarNewYear = new Date('Jan 31 2022 15:50:00:00 GMT+0700 (Indochina Time)')
-let afterLunarNewYear = new Date('Jan 31 2022 15:50:00:10 GMT+0700 (Indochina Time)')
+let lunarNewYear = new Date('Feb 1 2022 00:00:00:00 GMT+0700 (Indochina Time)')
+let afterLunarNewYear = new Date('Feb 1 2022 00:00:00:10 GMT+0700 (Indochina Time)')
 if (new Date() >= lunarNewYear) {
 	console.log('ok')	
     HappyNewYear()
