@@ -151,12 +151,13 @@
 
 function HappyNewYear(){
     console.log('ok')
+	document.querySelector('title').innerText = 'Happy New Year'
     $('#countdown').remove()
     $('h2').text('HAPPY NEW YEAR')
     $('h2').css('top', '20%')
     $('.wrap').append(`
     <video class="video" hidden id ="video" id="jscii-element-video" loop autoplay>
-        <source src="./static/video/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="/static/video/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
         Your browser does not support video
 	</video>
     <pre hidden class="video" id="ascii-video"></pre>
@@ -175,6 +176,8 @@ let lunarNewYear = new Date('Jan 31 2022 13:37:00:00 GMT+0700 (Indochina Time)')
 let afterLunarNewYear = new Date('Jan 31 2022 13:37:00:10 GMT+0700 (Indochina Time)')
 if (new Date() >= lunarNewYear) {
     HappyNewYear()
+} else {
+	$('h2').text('COUNTDOWN')
 }
 setInterval(() => {
     let date = new Date()
@@ -228,6 +231,3 @@ function changeVideo() {
 
 checkVideo()
 checkTypeVideo()
-
-let media = document.querySelector('#video')
-media.removeAttribute('hidden')
