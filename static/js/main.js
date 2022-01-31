@@ -156,7 +156,7 @@ function HappyNewYear(){
     $('h2').text('HAPPY NEW YEAR')
     $('h2').css('top', '20%')
     $('.wrap').append(`
-    <video class="video" hidden id ="video" id="jscii-element-video" loop autoplay>
+    <video class="video" id ="video" id="jscii-element-video" loop autoplay>
         <source src="./static/video/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
         Your browser does not support video
 	</video>
@@ -209,7 +209,7 @@ function playVideo() {
 }
 
 function checkTypeVideo() {
-	if(document.querySelector('#ascii-video').getAttribute('hidden')) {
+	if(document.querySelector('#ascii-video').hasAttribute('hidden')) {
 		$('#change').text('Normal Video')
 	} else {
 		$('#change').text('Ascii Video')
@@ -217,7 +217,6 @@ function checkTypeVideo() {
 }
 
 function changeVideo() {
-	console.log(document.querySelector('#ascii-video').getAttribute('hidden'))
 	if(!document.querySelector('#ascii-video').hasAttribute('hidden')) {
 		document.querySelector('#ascii-video').setAttribute('hidden', '')
 		document.querySelector('#video').removeAttribute('hidden')
